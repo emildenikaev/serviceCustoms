@@ -1,0 +1,82 @@
+<footer class="footer">
+  <div class="container">
+    <nav class="menu">
+      <ul>
+        <li class="menu-item">
+          <a
+            class="footer-left header-info__main"
+            [routerLink]="['/']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Меню 1</a
+          >
+        </li>
+        <li class="menu-item">
+          <a
+            class="footer-left header-info__about"
+            [routerLink]="['/about']"
+            routerLinkActive="active"
+            >Меню 2</a
+          >
+        </li>
+        <li class="menu-item">
+          <a
+            class="footer-left header-info__contacts"
+            [routerLink]="['/contacts']"
+            routerLinkActive="active"
+            >Меню 3</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <div class="logo">
+      <img src="assets/images/logo.png" alt="logo" />
+    </div>
+    <nav class="menu">
+      <ul>
+        <li class="menu-item">
+          <a
+            class="footer-right header-info__main"
+            [routerLink]="['/']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Меню 1</a
+          >
+        </li>
+        <li class="menu-item">
+          <a
+            class="footer-right header-info__about"
+            [routerLink]="['/about']"
+            routerLinkActive="active"
+            >Меню 2</a
+          >
+        </li>
+        <li class="menu-item">
+          <a
+            class="footer-right header-info__contacts"
+            [routerLink]="['/contacts']"
+            routerLinkActive="active"
+            >Меню 3</a
+          >
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="container-info">
+    <div class="networks">
+      <a href="#" class="networks__logo"
+        ><img src="assets/images/logo.png" alt="logo"
+      /></a>
+      <a href="#" class="networks__logo"
+        ><img src="assets/images/logo.png" alt="logo"
+      /></a>
+      <a href="#" class="networks__logo"
+        ><img src="assets/images/logo.png" alt="logo"
+      /></a>
+      <a href="#" class="networks__logo networks__logo-last"
+        ><img src="assets/images/logo.png" alt="logo"
+      /></a>
+    </div>
+    <div class="privates">© Название 2022. Мы за качество!</div>
+  </div>
+</footer>

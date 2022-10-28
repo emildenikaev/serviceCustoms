@@ -1,0 +1,60 @@
+<header class="header">
+  <div class="container">
+    <div class="logo">
+      <img src="assets/images/logo.png" alt="logo" />
+    </div>
+    <nav class="menu">
+      <ul>
+        <li class="menu-item">
+          <a
+            class="header-info header-info__main"
+            [routerLink]="['/']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Главная</a
+          >
+        </li>
+        <li class="menu-item">
+          <a
+            class="header-info header-info__about"
+            [routerLink]="['/about']"
+            routerLinkActive="active"
+            >Меню 2</a
+          >
+        </li>
+        <li class="menu-item">
+          <a
+            class="header-info header-info__contacts"
+            [routerLink]="['/contacts']"
+            routerLinkActive="active"
+            >Меню 3</a
+          >
+        </li>
+        <li class="menu-item">
+          <a
+            class="header-info header-info__contacts"
+            [routerLink]="['/contacts']"
+            routerLinkActive="active"
+            >Меню 4</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <div class="reg">
+      <a
+        href="#"
+        class="enter"
+        [routerLink]="['/registration']"
+        routerLinkActive="active"
+        >Войти</a
+      >
+      <a
+        href="#"
+        class="registration"
+        [routerLink]="['/registration']"
+        routerLinkActive="active"
+        >Зарегистрироваться</a
+      >
+    </div>
+  </div>
+</header>

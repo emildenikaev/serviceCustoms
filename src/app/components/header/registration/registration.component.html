@@ -1,0 +1,112 @@
+<section class="reg">
+  <form name="form" [formGroup]="form">
+    <h1>Форма регистрации</h1>
+    <div class="form form-group">
+      <input
+        [ngClass]="{
+          'has-danger':
+            form.get('soname').touched && form.get('soname').invalid,
+          'has-success': form.get('soname').valid
+        }"
+        type="text"
+        class="form-control"
+        name="soname"
+        formControlName="soname"
+        id="soname"
+        placeholder="*Введите имя"
+      />
+    </div>
+
+    <div class="form form-group">
+      <input
+        [ngClass]="{
+          'has-danger': form.get('name').touched && form.get('name').invalid,
+          'has-success': form.get('name').valid
+        }"
+        type="text"
+        class="form-control"
+        name="name"
+        formControlName="name"
+        id="name"
+        placeholder="*Введите фамилию"
+      />
+    </div>
+
+    <div class="form form-group">
+      <input
+        type="text"
+        class="form-control"
+        name="patronymic"
+        formControlName="patronymic"
+        id="patronymic"
+        placeholder="Введите отчество"
+      />
+    </div>
+
+    <div class="form form-group">
+      <label for="form-control bday">*День рождения:</label>
+      <input
+        [ngClass]="{
+          'has-danger': form.get('date').touched && form.get('date').invalid,
+          'has-success': form.get('date').valid
+        }"
+        type="date"
+        class="form-control"
+        name="date"
+        formControlName="date"
+        min="1900-04-01"
+        max="2022-04-30"
+        id="bday"
+      />
+    </div>
+
+    <div class="form form-group">
+      <input
+        [ngClass]="{
+          'has-danger': form.get('tel').touched && form.get('tel').invalid,
+          'has-success': form.get('tel').valid
+        }"
+        type="text"
+        class="form-control"
+        name="tel"
+        formControlName="tel"
+        id="tel"
+        placeholder="*Введите телефон"
+      />
+    </div>
+
+    <div class="form form-group">
+      <label for="gender">Пол: </label>
+      <select id="gender" class="form-control">
+        <option>Мужской</option>
+        <option>Женский</option>
+      </select>
+    </div>
+
+    <div class="form form-group">
+      <label for="gender">*Группа клиентов: </label>
+      <select id="gender" class="form-control">
+        <option>VIP</option>
+        <option>Проблемные</option>
+        <option>ОМС</option>
+      </select>
+    </div>
+
+    <div>
+      <input type="checkbox" id="send" name="send" checked />
+      <label for="send">Не отправлять СМС</label>
+    </div>
+
+    <p>*Поле обязательное для заполнения.</p>
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="form.invalid"
+      onclick="submit()"
+    >
+      Зарегистрироваться
+    </button>
+  </form>
+
+  <img src="#" alt="photo" />
+</section>

@@ -1,0 +1,15 @@
+form {
+  .has-danger{
+    border: 1px solid red;
+  }
+  .has-success{
+    border: 1px solid green;
+  }
+
+}
+.reg {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0 auto;
+}
