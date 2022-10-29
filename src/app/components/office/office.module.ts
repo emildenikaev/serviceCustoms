@@ -2,10 +2,11 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
+import { SharedModule } from "../shared/shared.module";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { LoginComponent } from "./login/login.component";
 import { OfficeLayoutComponent } from "./shared/components/office-layout/office-layout.component";
-import { AuthSrvice } from "./shared/services/auth.service";
+import { AuthService } from "./shared/services/auth.service";
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { AuthSrvice } from "./shared/services/auth.service";
   imports: [
     CommonModule,
     FormsModule,
+    SharedModule,
     ReactiveFormsModule,
     RouterModule.forChild([
       {
@@ -27,7 +29,7 @@ import { AuthSrvice } from "./shared/services/auth.service";
     ])
   ],
   exports: [RouterModule],
-  providers: [AuthSrvice]
+  providers: [AuthService]
 })
 
 export class OfficeModule {
