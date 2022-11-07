@@ -10,9 +10,14 @@ const routes: Routes = [
     ]
   },
   {
+    path: 'admin', 
+    loadChildren: () => import('./components/admin/admin.module').then(x => x.AdminModule),
+  },
+  {
     path: 'office', 
     loadChildren: () => import('./components/office/office.module').then(x => x.OfficeModule),
   }
+
    
 ];
 

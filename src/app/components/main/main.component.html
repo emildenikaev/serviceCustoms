@@ -1,82 +1,109 @@
-<section class="company">
-  <div class="company-info">
-    <h1>Наше название - наш девиз</h1>
-    <h5>Lorem, ipsum.</h5>
-    <p>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt,
-      officia architecto natus in, quia expedita rem molestias ab velit,
-      laudantium corporis adipisci alias necessitatibus delectus optio aliquam
-      omnis quos cum.
-    </p>
-    <h5>Lorem, ipsum.</h5>
-    <p>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt,
-      officia architecto natus in, quia expedita rem molestias ab velit,
-      laudantium corporis adipisci alias necessitatibus delectus optio aliquam
-      omnis quos cum.
-    </p>
-  </div>
-  <div class="company-photo">
-    <img src="#" alt="Photo" />
-    <h5>Lorem, ipsum.</h5>
-    <p>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt,
-      officia architecto natus in, quia expedita rem molestias ab velit,
-      laudantium corporis adipisci alias necessitatibus delectus optio aliquam
-      omnis quos cum.
-    </p>
+<section>
+  <div class="company">
+    <div class="company-wrap">
+      <div class="company-info">
+        <h1>Реактор+</h1>
+        <h2>Нетривиальное решение по выявлению перспективных отраслей</h2>
+        <h3>Продукт, не имеющий аналогов</h3>
+        <p>
+          Реактор+ это инструмент позволяющий на основе быстрой аналитики
+          принять решение о создании импортозамещающих производств.
+        </p>
+        <h3>Удобство использования</h3>
+        <p class="plus">
+          Реактор+ позволяет сохранять дашборды на компьютер и в личном
+          кабинете, чтобы пользователь всегда имел доступ к интересующим его
+          данным.
+        </p>
+      </div>
+      <div class="rectangle-big"></div>
+      <div class="rectangle"></div>
+    </div>
+
+    <div class="company-photo">
+      <img src="assets/images/logo.svg" alt="logo" class="logo" />
+      <div class="trapezoid">
+        <h3>Динамическая аналитика</h3>
+        <p>
+          Благодаря наличию фильтров и анализу данных в режиме real-time,
+          Реактор+ предоставляет уникальное персонализированное решение,
+          основываясь на актуальных данных
+        </p>
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="benefits">
-  <h2>Вы получите вот эти преимущества</h2>
+  <h2>Преимущества:</h2>
   <div class="cards">
     <div class="benefit-card">
-      <img src="#" alt="photo" />
-      <h4>Lorem, ipsum dolor.</h4>
+      <img src="assets/images/actual.png" alt="photo" class="photo" />
+      <h4>Актуальность</h4>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis
-        et incidunt expedita aliquam excepturi nemo dolore facere architecto,
-        eius doloribus quas ipsa eveniet voluptas obcaecati.
+        Данные собираются в реальном времени чтобы пользователь получал самую
+        актуальную и достоверную информацию.
       </p>
-      <a href="#">Узнать больше</a>
+      <a href="#" [routerLink]="['/office']" routerLinkActive="active"
+        >Узнать больше</a
+      >
     </div>
     <div class="benefit-card">
-      <img src="#" alt="photo" />
-      <h4>Lorem, ipsum dolor.</h4>
+      <img src="assets/images/anaysis.png" alt="photo" class="photo" />
+      <h4>Анализ</h4>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis
-        et incidunt expedita aliquam excepturi nemo dolore facere architecto,
-        eius doloribus quas ipsa eveniet voluptas obcaecati.
+        Программа автоматически анализирует данные и формирует отчёт с
+        интуитивно понятной визуализацией.
       </p>
-      <a href="#">Узнать больше</a>
+      <a href="#" [routerLink]="['/office']" routerLinkActive="active"
+        >Узнать больше</a
+      >
     </div>
     <div class="benefit-card">
-      <img src="#" alt="photo" />
-      <h4>Lorem, ipsum dolor.</h4>
+      <img src="assets/images/quality.png" alt="photo" class="photo" />
+      <h4>Качество</h4>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis
-        et incidunt expedita aliquam excepturi nemo dolore facere architecto,
-        eius doloribus quas ipsa eveniet voluptas obcaecati.
+        Результатом комплексного анализа является статистика, на основе которой
+        пользователь может легко принять решения в отношении приоритетной
+        отрасли.
       </p>
-      <a href="#">Узнать больше</a>
+      <a href="#" [routerLink]="['/office']" routerLinkActive="active"
+        >Узнать больше</a
+      >
     </div>
   </div>
 </section>
 <section class="use">
-  <img src="#" alt="photo" />
+  <img
+    src="assets/images/use-interface.png"
+    alt="interface"
+    class="interface"
+  />
   <div class="use-info">
-    <h3>Как пользоваться</h3>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus rerum
-      natus itaque aliquid praesentium, corrupti sint consequuntur omnis
-      deleniti ad. Sint quaerat eos corrupti porro eaque officia consequuntur
-      maiores illum!
-    </p>
-    <ul>
-      <li>Зарегаться</li>
-      <li>Выбрать нужный пунктик</li>
-      <li>Скачать</li>
-    </ul>
+    <div class="rectangle r1"></div>
+    <div class="rectangle r2"></div>
+    <div class="rectangle r3"></div>
+    <div class="use-interface">
+      <h3>Использование системы</h3>
+      <p>
+        Интерфейс сайта Реактор+ интуитивно понятен всем без исключения. Работа
+        с системой включает в себя всего три этапа: - вход в личный кабинет -
+        выбор интересующих фильтров в форме запроса - скачивание отчёта на пк
+        или в личный кабинет
+      </p>
+      <ul>
+        <li>
+          <img src="assets/images/registration.png" alt="registration" />
+          Зарегистрироваться
+        </li>
+        <li>
+          <img src="assets/images/choice.png" alt="choice" /> Выбрать нужный
+          пункт
+        </li>
+        <li class="download">
+          <img src="assets/images/download.png" alt="download" />Скачать
+        </li>
+      </ul>
+    </div>
   </div>
 </section>

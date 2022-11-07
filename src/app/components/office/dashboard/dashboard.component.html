@@ -1,35 +1,48 @@
-<section class="office">
-  <div class="person">
-    <img src="#" alt="photo" />
-    <div class="person-info">
-      <h6>Иван Иванов</h6>
-      <p>pochta@gmail.com</p>
-      <ul>
-        <li><img src="#" alt="photo" />Личный кабинет</li>
-        <li><img src="#" alt="photo" />Сохранённые</li>
-        <li><img src="#" alt="photo" />Недавние</li>
-        <li><img src="#" alt="photo" />Настройки</li>
-      </ul>
-    </div>
+<section class="wrapper">
+  <h2>Итоговая таблица:</h2>
+  <button mat-raised-button color="accent" (click)="refresh()">
+    Обновить данные
+  </button>
+  <div class="example-container mat-elevation-z8" tabindex="0">
+    <table mat-table [dataSource]="dataSt">
+      <!-- Name Column -->
+
+      <ng-container matColumnDef="stoim20211Tostoim20201">
+        <th mat-header-cell *matHeaderCellDef>stoim20211Tostoim20201</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.stoim20211Tostoim20201 }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="stoim20212Tostoim20202">
+        <th mat-header-cell *matHeaderCellDef>stoim20212Tostoim20202</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.stoim20212Tostoim20202 }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="stoim20213Tostoim20203">
+        <th mat-header-cell *matHeaderCellDef>stoim20213Tostoim20203</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.Stoim20213ToStoim20203 }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="stoim20214Tostoim20204">
+        <th mat-header-cell *matHeaderCellDef>stoim20214Tostoim20204</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.stoim20214Tostoim20204 }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="star">
+        <th mat-header-cell *matHeaderCellDef aria-label="row actions">
+          &nbsp;
+        </th>
+        <td mat-cell *matCellDef="let element">
+          <mat-icon>more_vert</mat-icon>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
   </div>
-  <div class="request">
-    <h3>Новый запрос</h3>
-    <form>
-      <label for="email">Промышленность </label>
-      <input id="email" type="text" />
-      <label for="email">Регион </label>
-      <input id="email" type="text" />
-      <label for="email">Отчетный период </label>
-      <input id="email" type="text" />
-      <label for="email">Логистический потенциал </label>
-      <input id="email" type="text" />
-      <label for="email">Уровень промышленности </label>
-      <input id="email" type="text" />
-      <label for="email">Кол-во предприятий в регионе </label>
-      <input id="email" type="text" />
-      <label for="email">Кол-во предприятий др регионах </label>
-      <input id="email" type="text" />
-      <button type="submit" class="btn">Сформировать отчет</button>
-    </form>
-  </div>
+  <button type="submit" class="btn" (click)="back()">Назад</button>
 </section>

@@ -1,46 +1,28 @@
-<form class="card" [formGroup]="form" (ngSubmit)="submit()">
-  <h2>Войти</h2>
-  <div
-    class="form-control"
-    [ngClass]="{
-      invalid: form.get('email').touched && form.get('email').invalid
-    }"
-  >
-    <label for="email">Email: </label>
-    <input id="email" type="email" formControlName="email" />
-    <div
-      *ngIf="form.get('email').touched && form.get('email').invalid"
-      class="validation"
-    >
-      <small *ngIf="form.get('email').errors?.['required']"
-        >Введите email</small
-      >
-      <small *ngIf="form.get('email').errors?.['email']"
-        >Введите корректный email</small
-      >
+<div class="wrapper">
+  <form [formGroup]="form" (ngSubmit)="login()">
+    <h2>Вход</h2>
+    <div class="fom-control">
+      <input
+        type="text"
+        formControlName="email"
+        [ngClass]="{
+          invalid: form.get('email').touched && form.get('email').invalid
+        }"
+        placeholder="Почта"
+      />
     </div>
-  </div>
-  <div
-    class="form-control"
-    [ngClass]="{
-      invalid: form.get('password').touched && form.get('password').invalid
-    }"
-  >
-    <label for="password">Пароль: </label>
-    <input id="password" type="password" formControlName="password" />
-    <div
-      class="validation"
-      *ngIf="form.get('password').touched && form.get('password').invalid"
-    >
-      <small *ngIf="form.get('password').errors?.['required']"
-        >Введите пароль</small
-      >
-      <small *ngIf="form.get('password').errors?.['minlength']">
-        Пароль должен быть не менее
-        {{ form.get("password").errors?.['minlength'].requiredLength }}
-        символов
-      </small>
+    <div class="fom-control">
+      <input
+        type="password"
+        formControlName="password"
+        placeholder="Пароль"
+        [ngClass]="{
+          invalid: form.get('email').touched && form.get('email').invalid
+        }"
+      />
     </div>
-  </div>
-  <button type="submit" class="btn" [disabled]="form.invalid">Войти</button>
-</form>
+    <div>
+      <button type="submit" class="btn" [disabled]="form.invalid">Войти</button>
+    </div>
+  </form>
+</div>

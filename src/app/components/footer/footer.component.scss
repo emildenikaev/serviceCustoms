@@ -1,10 +1,22 @@
+footer {
+  background: #333333;
+  color: #e1e3e6;
+  a {
+    color: #e1e3e6;
+    &:visited {
+      color: #e1e3e6;
+    }
+    &:hover {
+      color: #666;
+    }
+  }
 .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
-  max-width: 1100px;
-  padding: 10px 0;
+  max-width: 1400px;
+
   ul {
     display: flex;
     .footer-left {
@@ -28,5 +40,13 @@
   }
   .networks__logo-last {
     margin-right: 0;
+  }
+}
+
+  .logo {
+    width: 65px;
+  }
+  .info {
+    width: 50px;
   }
 }
