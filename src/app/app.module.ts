@@ -19,14 +19,24 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
+import { LoaderComponent } from './components/shared/components/loader/loader.component';
+import { ResourcesComponent } from './components/resources/resources.component';
+import { InfoComponent } from './components/info/info.component';
+import { SupportComponent } from './components/support/support.component';
+import { RecommendationsComponent } from './components/office/recommendations/recommendations.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     MainComponent,
+    ResourcesComponent,
+    InfoComponent,
+    SupportComponent,
     FooterComponent,
-    AnalyticsComponent
+    AnalyticsComponent,
+    LoaderComponent,
+    RecommendationsComponent
   ],
   imports: [
     BrowserModule,

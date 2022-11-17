@@ -14,8 +14,7 @@ export class TableService {
   constructor(private httpclient: HttpClient) {
     this.httpOptions = {
       headers: new HttpHeaders({
-        'Content-type': 'application/json,',
-        'X-CSCAPI-KEY': ''
+        'Content-type': 'application/json,'
       })
     }
   }
@@ -23,6 +22,12 @@ export class TableService {
   getTable(): Observable<any> {
 
     return this.httpclient.get('http://188.72.108.212:8000/data')
+
+  }
+
+   getRecTable(): Observable<any> {
+
+    return this.httpclient.get('http://188.72.108.212:8000/get_recomendation')
 
   }
 

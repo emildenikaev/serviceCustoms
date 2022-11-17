@@ -1,37 +1,101 @@
+<section class="wrapper choise">
+  <h2>Выбранные фильтры:</h2>
+  <ul>
+    <li><span>Страна: </span> {{ answerTable.countryForm }}</li>
+    <li><span>Направление: </span> {{ answerTable.naprsForm }}</li>
+    <li><span>Показатель динамики: </span> {{ answerTable.yearsForm }}</li>
+    <li><span>ТН ВЭД: </span> {{ answerTable.tnvedsForm }}</li>
+    <li><span>Выбор отчета: </span> {{ answerTable.resForm }}</li>
+    <li><span>Регион: </span> {{ answerTable.regionForm }}</li>
+  </ul>
+</section>
+
 <section class="wrapper">
-  <h2>Итоговая таблица:</h2>
+  <h2>Динамика показателя в сравнении с предыдущим годом того же месяца:</h2>
   <button mat-raised-button color="accent" (click)="refresh()">
     Обновить данные
   </button>
   <div class="example-container mat-elevation-z8" tabindex="0">
     <table mat-table [dataSource]="dataSt">
       <!-- Name Column -->
-
+      <ng-container matColumnDef="tnved">
+        <th mat-header-cell *matHeaderCellDef>ТН ВЭД</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.tnved }}
+        </td>
+      </ng-container>
       <ng-container matColumnDef="stoim20211Tostoim20201">
-        <th mat-header-cell *matHeaderCellDef>stoim20211Tostoim20201</th>
+        <th mat-header-cell *matHeaderCellDef>Январь</th>
         <td mat-cell *matCellDef="let element">
           {{ element.stoim20211Tostoim20201 }}
         </td>
       </ng-container>
       <ng-container matColumnDef="stoim20212Tostoim20202">
-        <th mat-header-cell *matHeaderCellDef>stoim20212Tostoim20202</th>
+        <th mat-header-cell *matHeaderCellDef>Февраль</th>
         <td mat-cell *matCellDef="let element">
           {{ element.stoim20212Tostoim20202 }}
         </td>
       </ng-container>
       <ng-container matColumnDef="stoim20213Tostoim20203">
-        <th mat-header-cell *matHeaderCellDef>stoim20213Tostoim20203</th>
+        <th mat-header-cell *matHeaderCellDef>Март</th>
         <td mat-cell *matCellDef="let element">
-          {{ element.Stoim20213ToStoim20203 }}
+          {{ element.stoim20213Tostoim20203 }}
         </td>
       </ng-container>
       <ng-container matColumnDef="stoim20214Tostoim20204">
-        <th mat-header-cell *matHeaderCellDef>stoim20214Tostoim20204</th>
+        <th mat-header-cell *matHeaderCellDef>Апрель</th>
         <td mat-cell *matCellDef="let element">
           {{ element.stoim20214Tostoim20204 }}
         </td>
       </ng-container>
-
+      <ng-container matColumnDef="stoim20215Tostoim20205">
+        <th mat-header-cell *matHeaderCellDef>Май</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.stoim20215Tostoim20205 }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="stoim20216Tostoim20206">
+        <th mat-header-cell *matHeaderCellDef>Июнь</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.stoim20216Tostoim20206 }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="stoim20217Tostoim20207">
+        <th mat-header-cell *matHeaderCellDef>Июль</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.stoim20217Tostoim20207 }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="stoim20218Tostoim20208">
+        <th mat-header-cell *matHeaderCellDef>Август</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.stoim20218Tostoim20208 }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="stoim20219Tostoim20209">
+        <th mat-header-cell *matHeaderCellDef>Сентябрь</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.stoim20219Tostoim20209 }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="stoim202110Tostoim202010">
+        <th mat-header-cell *matHeaderCellDef>Октябрь</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.stoim202110Tostoim202010 }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="stoim202111Tostoim202011">
+        <th mat-header-cell *matHeaderCellDef>Ноябрь</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.stoim202111Tostoim202011 }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="stoim202112Tostoim202012">
+        <th mat-header-cell *matHeaderCellDef>Декабрь</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.stoim202112Tostoim202012 }}
+        </td>
+      </ng-container>
       <ng-container matColumnDef="star">
         <th mat-header-cell *matHeaderCellDef aria-label="row actions">
           &nbsp;
@@ -40,9 +104,18 @@
           <mat-icon>more_vert</mat-icon>
         </td>
       </ng-container>
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
     </table>
   </div>
-  <button type="submit" class="btn" (click)="back()">Назад</button>
+  <p>
+    *nan - нет данных по данному периоду <br />
+    Показатели выраженны в процентах и определяют прирост объемов в предыдущему
+    году в разрезе месяцев. <br />P.S. отрицательные значения говорят о
+    сокращении объемов.
+  </p>
+  <div class="wrapper-buttons">
+    <button type="submit" class="btn" (click)="back()">Назад</button>
+    <a type="submit" class="btn" href="{{ link }}">Скачать</a>
+  </div>
 </section>

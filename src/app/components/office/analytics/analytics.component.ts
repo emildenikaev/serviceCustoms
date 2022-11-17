@@ -24,6 +24,7 @@ export class AnalyticsComponent implements OnInit {
     dataSource = new MatTableDataSource<Table>();
     countrySource = new MatTableDataSource();
     dataSo = new MatTableDataSource();
+    
     tnvedSource = new MatTableDataSource();
     @ViewChild(MatSort) sort: MatSort;
     @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -34,17 +35,18 @@ export class AnalyticsComponent implements OnInit {
         private _auth: AuthService,
         private router: Router,
         public fb: FormBuilder,) { }
-    listAnalytics!: Table[];
-
-    formReq: FormGroup
-    analyticForm: FormGroup;
-    submitted: boolean = false;
+      listAnalytics!: Table[];
+      load: boolean = false;
+      formReq: FormGroup
+      analyticForm: FormGroup;
+      submitted: boolean = false;
       dataS: any;
       countRes: any;
       wait: any;
-    naprList: string[] = ['Экспорт', 'Импорт'];
-
-    yearList: string[] = ['2019', '2020', '2021'];
+      naprList: string[] = ['Экспорт', 'Импорт'];
+      resList: string[] = ['Динамика показателей', 'Результат аналитики'];
+      yearList: string[] = ['Стоимость', 'Вес', 'Количество'];
+      regionsList: string[] = ['РФ', 'Москва', 'Московская область', 'СПБ', 'РФ без Московской области'];
 
       countryList: any;
       tnvedList: any;
@@ -64,6 +66,8 @@ export class AnalyticsComponent implements OnInit {
         yearsForm: new FormControl(),
         countryForm: new FormControl(),
         tnvedsForm: new FormControl('', Validators.required),
+        resForm: new FormControl('', Validators.required),
+        regionForm: new FormControl('', Validators.required),
     });
       this.analyticForm = new FormGroup({
         nastranapr: new FormControl(),
@@ -113,13 +117,18 @@ export class AnalyticsComponent implements OnInit {
   }
     submit(){
     let b = {user_form: this.formReq.value}
+    this.answer.saveAnalytics = this.formReq.value
     this._api.postTypeRequest('delta', b).subscribe((response) => {
       this.answer.answerRes = response
-      console.log(this.answer.answerRes)
       this.router.navigate(['/office', 'dashboard'])
       
     });
   }
 
-
+  loader (){
+    setTimeout(() => {
+      this.load = !this.load
+    }, 500)
+    
+  }
 }

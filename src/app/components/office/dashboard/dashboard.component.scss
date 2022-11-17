@@ -5,6 +5,28 @@
   overflow: auto;
   
 }
+.choise {
+  max-width: 100%;
+  max-width: 900px;
+  background: rgba(60, 77, 111, 0.5);
+  padding: 35px;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 20%), 0 2px 2px rgb(0 0 0 / 20%), 0 4px 4px rgb(0 0 0 / 20%), 0 8px 8px rgb(0 0 0 / 20%), 0 16px 16px rgb(0 0 0 / 20%);
+    h2 {
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 25px;
+    }
+    li {
+      font-size: 15px;
+      line-height: 20px;
+    }
+    span {
+       font-size: 20px;
+      line-height: 25px;
+      color: #88D7FF;
+    }
+}
+
 .btn{ 
   font-size: 15px;
   line-height: 18px;
@@ -20,13 +42,15 @@
 .wrapper {
   margin: 60px auto;
   background: #4B5E87;
-    box-shadow: 0px 0px 80px rgb(12 24 56 / 60%);
+    box-shadow: 0 1px 1px rgb(0 0 0 / 20%), 0 2px 2px rgb(0 0 0 / 20%), 0 4px 4px rgb(0 0 0 / 20%), 0 8px 8px rgb(0 0 0 / 20%), 0 16px 16px rgb(0 0 0 / 20%);
     border-radius: 30px;
     padding: 55px 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    box-shadow: 6px -6px rgb(60 77 111 / 20%);
+    h2 {
+      color: #88D7FF;
+    }
 }
 
 table {
@@ -49,4 +73,19 @@ th.mat-column-position, td.mat-column-position {
 
 .mat-table-sticky-border-elem-left {
   border-right: 1px solid #e0e0e0;
+}
+
+td.mat-cell {
+  padding-right: 20px;
+}
+
+.wrapper-buttons {
+  display: flex;
+  justify-content: space-between;
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+  }
 }

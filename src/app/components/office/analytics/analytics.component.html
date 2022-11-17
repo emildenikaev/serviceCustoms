@@ -36,7 +36,7 @@
         </ul>
       </div>
     </div>
-    <div class="request">
+    <div class="request" *ngIf="!load; else loading">
       <h3>Новый запрос</h3>
       <form [formGroup]="formReq" (ngSubmit)="submit()">
         <mat-form-field appearance="fill">
@@ -60,7 +60,8 @@
         </mat-form-field>
 
         <mat-form-field appearance="fill">
-          <mat-label>Год</mat-label>
+          <mat-label>Показатель динамики</mat-label>
+          <!-- year - показатель -->
           <mat-select formControlName="yearsForm">
             <mat-option *ngFor="let yearF of yearList" [value]="yearF">{{
               yearF
@@ -69,15 +70,39 @@
         </mat-form-field>
         <mat-form-field appearance="fill">
           <mat-label>ТН ВЭД</mat-label>
-          <mat-select formControlName="tnvedsForm">
+          <mat-select formControlName="tnvedsForm" multiple>
             <mat-option *ngFor="let tnvedF of tnvedList" [value]="tnvedF">{{
               tnvedF
             }}</mat-option>
           </mat-select>
         </mat-form-field>
-        <button type="submit" class="btn" [disabled]="formReq.invalid">
+        <mat-form-field appearance="fill">
+          <mat-label>Выбор отчета</mat-label>
+          <mat-select formControlName="resForm">
+            <mat-option *ngFor="let resF of resList" [value]="resF">{{
+              resF
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Регион</mat-label>
+          <mat-select formControlName="regionForm">
+            <mat-option *ngFor="let regionF of regionsList" [value]="regionF">{{
+              regionF
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button
+          type="submit"
+          class="btn btn_get"
+          [disabled]="formReq.invalid"
+          (click)="loader()"
+        >
           Сформировать отчет
         </button>
+        <a class="btn btn_get" [routerLink]="['/office', 'recommendations']"
+          >Получить рекомендации</a
+        >
       </form>
     </div>
   </div>
@@ -159,3 +184,7 @@
     aria-label="Select page of users"
   ></mat-paginator>
 </div>
+
+<ng-template #loading>
+  <app-loader>Идет загрузка...</app-loader>
+</ng-template>

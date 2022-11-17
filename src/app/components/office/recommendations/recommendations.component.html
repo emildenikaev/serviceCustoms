@@ -1,0 +1,81 @@
+<div class="table" *ngIf="waiter; else loading">
+  <h2>Таблица рекомендаций</h2>
+  <form mat-form-field appearance="standard" class="filter">
+    <input
+      matInput
+      (keyup)="applyFilter($event)"
+      placeholder="Фильтр по словам"
+      #input
+    />
+  </form>
+
+  <table mat-table [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="tnved_cat">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>ТНВЭД</th>
+      <td mat-cell *matCellDef="let element">{{ element["tnved_cat"] }}</td>
+    </ng-container>
+    <ng-container matColumnDef="category">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>ТНВЭД Описание</th>
+      <td mat-cell *matCellDef="let element">{{ element.category }}</td>
+    </ng-container>
+    <ng-container matColumnDef="napr">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Направление</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.napr }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="2019">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>2019</th>
+      <td mat-cell *matCellDef="let element">{{ element["2019"] }}</td>
+    </ng-container>
+    <ng-container matColumnDef="2020">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>2020</th>
+      <td mat-cell *matCellDef="let element">{{ element["2020"] }}</td>
+    </ng-container>
+    <ng-container matColumnDef="2021">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>2021</th>
+      <td mat-cell *matCellDef="let element">{{ element["2021"] }}</td>
+    </ng-container>
+    <ng-container matColumnDef="2020vs2019">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>2020vs2019</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element["2020vs2019"] }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="2021vs2020">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>2021vs2020</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element["2021vs2020"] }}
+      </td>
+    </ng-container>
+    <!-- Header and Row Declarations -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4">
+        Нет данных, соответствующих фильтру "{{ input.value }}"
+      </td>
+    </tr>
+  </table>
+  <mat-paginator
+    [pageSizeOptions]="[5, 10, 25, 100]"
+    aria-label="Select page of users"
+  ></mat-paginator>
+  <p>
+    Показатели выраженны в процентах и определяют прирост объемов в предыдущему
+    году. <br />P.S. отрицательные значения говорят о сокращении объемов.
+  </p>
+  <div class="wrapper-buttons">
+    <button type="submit" class="btn" (click)="back()">Назад</button>
+    <a
+      type="submit"
+      class="btn"
+      href="http://188.72.108.212:8000/download/recomendation.xlsx"
+      >Скачать</a
+    >
+  </div>
+</div>
+
+<ng-template #loading>
+  <app-loader>Идет загрузка...</app-loader>
+</ng-template>

@@ -8,7 +8,10 @@ import { map } from 'rxjs/operators';
 export class ApiService {
 
   private REST_API_SERVER = "http://188.72.108.212:8000/";
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
+  httpOptions = {
+    headers: new HttpHeaders({'Content-Type': 'application/json'})
+  };
 
   getTypeRequest(url: string) {
     return this.httpClient.get(this.REST_API_SERVER+url).pipe(map(res => {
